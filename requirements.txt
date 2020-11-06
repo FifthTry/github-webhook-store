@@ -1,5 +1,4 @@
 astroid==2.4.2
-click==7.1.2
 Flask==1.1.2
 isort==5.6.4
 itsdangerous==1.1.0
@@ -12,3 +11,14 @@ six==1.15.0
 toml==0.10.2
 Werkzeug==1.0.1
 wrapt==1.12.1
+doit==0.32.0
+django==3.0.7
+dj-database-url
+pygments
+brotli
+pip-tools
+pre-commit==1.10
+ipython
+django-extensions
+gsub==0.1.5
+click==7

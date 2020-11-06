@@ -1,0 +1,8 @@
+{
+     "static_dir": "src/static",
+     "elm_source_dirs": ["src/frontend"],
+     "catchall": true,
+     "cms_dir": "cms",
+     "context": "crate::middleware::Context"
+
+}

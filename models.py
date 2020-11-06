@@ -1,5 +1,8 @@
 from app import db
 
+
+
+
 class webhook_data(db.Model):
     __tablename__ = 'github_webhook_data'
     
@@ -9,7 +12,7 @@ class webhook_data(db.Model):
     headers = db.Column(db.String())
     body = db.Column(db.String())
 
-    def __init__(self, name, author, published):
+    def __init__(self, path, method, headers, body):
         self.path = path
         self.method = method
         self.headers = headers
