@@ -16,8 +16,8 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 # any method
 # any URL
 # @app.route('/')
-@app.route('/', methods=['GET', 'POST', 'PUT','HEAD','DELETE']) 
-def api_gh_msg():
+@app.route('/<path:path>', methods=['GET', 'POST', 'PUT','HEAD','DELETE']) 
+def api_gh_msg(path):
     """
     Flask lets you get all the methods only when mentioned explicitly 
     or by the default would be GET method
@@ -26,16 +26,21 @@ def api_gh_msg():
     Returns:
         dictionary: JSON that is sent to the above route by GitHub to subscribed events.
     """
+    
     print(request.method)
     headers = request.headers
     # parameters = request.args #returns ImmutableMultiDict([])
     # print("parameters: ", parameters)
+    boody = request.data
     method =request.method
     url = request.url
     print("Url: ", url)
     print("\nheaders: ", headers)
-
-    GithubData.objects.create(path=url, method='asd', headers='ok', body='body')
+    
+    # body = request.json 
+    # json can be easier to parse later but make sure request.headers['Content-type'] is 'application/json'
+    body = request.data 
+    GithubData.objects.create(path=url, method=method, headers=headers, body=body)
 
     return "ok"
 
