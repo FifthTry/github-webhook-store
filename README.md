@@ -38,7 +38,7 @@ ngork http 5000
 - Doing any activity in Github would generate a `data.json`
 
 
-## Setting up data base in heroku-postgressql
+## Setting up database in heroku-postgressql
 
 Connect our system with heroku-postgresql database
 ```
